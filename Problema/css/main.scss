@@ -1,0 +1,379 @@
+  //colors
+$white: #fff;
+$black: #000;
+$color_brown_dark: #a5732a;
+$color_brown_light_one: #dab074;
+$color_gray_dark: #686868;
+$color_gray_light: #797979;
+$color_brown_golden: #d29948;
+$color_gray_light_one: #d3d3d3;
+$color_gray_dark_one: #818285;
+$color_whitesmoke: #fef7ee;
+$color_golden_one: #d89b4e;
+
+//urls
+
+$url_tour_bg: url(../images/home/tour-bg.png);
+$url_tour_icon2: url(../images/home/tour-icon2.png);
+$url_slider_bg: url(../images/home/slider-bg.png);
+$url_footer: url(../images/home/footer.png);
+
+%btn_1 //selector variable que solo se usa con extend
+{
+	outline: none;
+	background: none;
+	box-shadow: none;
+	color: $color_brown_golden;
+}
+
+%btn_2,  {
+	background-color: inherit;
+	border: 0;
+	color: $color_brown_golden;
+}
+
+%header_3 {
+	background-color: inherit;
+	border: 0;
+	color: $color_brown_golden;
+}
+
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+
+//fonts
+$font_lato: Lato;
+$font_sans: sans-serif;
+$font_open: Open Sans;
+
+body {
+	background: $white;
+	font-family: $font_lato, $font_sans;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	color: $black;
+}
+html {
+	height: 100%;
+}
+a {
+	color: $color_brown_dark;
+	transition: 300ms;
+	&:hover {
+		outline: none;
+		text-decoration: none;
+		color: $color_brown_light_one;
+	}
+	&:focus {
+		outline: none;
+		outline-offset: 0;
+	}
+}
+ul {
+	list-style: none;
+}
+h1 {
+	font-family: $font_lato, $font_sans;
+	font-weight: 300;
+	color: $color_gray_dark;
+}
+h2 {
+	font-family: $font_lato, $font_sans;
+	font-weight: 300;
+	font-family: $font_lato, $font_sans;
+	font-weight: 300;
+	color: $color_gray_dark;
+	font-size: 24px;
+}
+h3 {
+	font-family: $font_lato, $font_sans;
+	font-weight: 300;
+	font-size: 18px;
+}
+h4 {
+	font-family: $font_lato, $font_sans;
+	font-weight: 300;
+}
+h5 {
+	font-family: $font_lato, $font_sans;
+	font-weight: 300;
+}
+h6 {
+	font-family: $font_lato, $font_sans;
+	font-weight: 300;
+}
+.overflow {
+	overflow: hidden;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.btn-common {
+	font-size: 14px;
+	color: $color_gray_light;
+	border: 1px solid $color_brown_light_one;
+	font-family: $font_open, $font_sans;
+	font-weight: 300;
+	padding: 10px 25px;
+	&:hover {
+		@extend %btn_1;
+	}
+	&:focus {
+		@extend %btn_1;
+	}
+}
+#action {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	right: 0;
+}
+.align-right {
+	text-align: right;
+}
+.inline {
+	display: inline-block;
+}
+.padding {
+	padding: 15px;
+}
+.padding-bottom {
+	padding-bottom: 65px;
+}
+.padding-top {
+	padding-top: 90px;
+}
+.padding-right {
+	padding-right: 80px;
+}
+.padding-left {
+	padding-left: 80px;
+}
+.margin-bottom {
+	margin-bottom: 35px;
+}
+.mt-24 {
+	margin-top: 24px;
+}
+.mt-45 {
+	margin-top: 45px;
+}
+#header {
+	margin-bottom: 0;
+	padding: 30px 0 60px;
+	.navbar-inverse {
+		.container {
+			position: relative;
+		}
+		.navbar-nav li {
+			a:hover {
+				color: $color_brown_golden;
+			}
+			&.active > a {
+				@extend %btn_2;
+				@extend %header_3;
+				&:focus {
+					@extend %btn_2;
+					@extend %header_3;
+				}
+			}
+		}
+	}
+	.navbar {
+		background: $white;
+		border: 0;
+		margin-bottom: 0;
+	}
+	.navbar-toggle {
+		margin-top: 20px;
+	}
+	.navbar-brand {
+		padding: 0;
+		margin-left: 0;
+		h1 {
+			padding: 0;
+			margin: 0;
+		}
+		h2 {
+			padding: 0;
+			margin: 0;
+		}
+	}
+	.navbar-nav {
+		&.navbar-right {
+			> li {
+				a  {
+					color: $black;
+					font-size: 12px;
+					padding: 20px;
+					text-transform: uppercase;
+					font-weight: 300;
+				}
+				&:last-child {
+					margin-right: 20px;
+				}
+			}
+			li > a:hover {
+				@extend %header_3;
+			}
+		}
+		li ul.sub-menu {
+			display: none;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			li {
+				a {
+					color: $color_gray_dark_one;
+					padding: 5px 0;
+					font-size: 13px;
+					display: block;
+					text-transform: capitalize;
+				}
+				&:hover {
+					background: $color_whitesmoke;
+					color: $color_brown_golden;
+				}
+				&:focus {
+					background: $color_whitesmoke;
+					color: $color_brown_golden;
+				}
+				.active {
+					background: $color_whitesmoke;
+					color: $color_brown_golden;
+					position: relative;
+					i {
+						position: absolute;
+						font-size: 56px;
+						top: -13px;
+						color: $color_brown_light_one;
+					}
+					.fa-angle-right {
+						left: -3px;
+					}
+					.fa-angle-left {
+						right: -3px;
+					}
+				}
+			}
+		}
+	}
+}
+.take-tour {
+	background: $url_tour_bg;
+	background-position: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+.vertical-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.airplain-img {
+	background: $url_tour_icon2 no-repeat;
+	background-size: cover;
+	background-position: 175px 2px;
+	height: 104px;
+}
+.tour-button {
+	position: relative;
+	top: 35px;
+	right: 126px;
+}
+.main-slider {
+	background: $url_slider_bg;
+	background-position: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 350px;
+}
+#footer {
+	background: $url_footer;
+	background-position: 73px 189px;
+	background-repeat: no-repeat;
+	background-size: inherit;
+}
+.slider-house {
+	position: absolute;
+	top: 152px;
+	left: 215px;
+}
+.slider-circle1 {
+	position: relative;
+	top: 65px;
+	left: 249px;
+}
+.slider-circle2 {
+	position: relative;
+	left: 248px;
+	top: 48px;
+}
+.slider-cloud1 {
+	position: relative;
+	left: 258px;
+	top: 35px;
+}
+.slider-cloud2 {
+	position: relative;
+	bottom: 31px;
+	left: 28px;
+}
+.slider-cloud3 {
+	position: relative;
+	left: 275px;
+}
+.slider-cycle {
+	position: relative;
+	top: 121px;
+	right: 42px;
+}
+.clients-logo {
+	margin-top: 42px;
+}
+.form-control {
+	border: 1px solid $color_golden_one;
+	border-radius: 4px;
+}
+.btn-submit {
+	background-color: $color_golden_one;
+	width: 100%;
+}
+.brown-bg {
+	background-color: $color_golden_one;
+}
+.brown-text {
+	color: $color_golden_one;
+}
+.blockquote {
+	font-size: 3rem;
+	margin-right: 7px;
+	color: $color_golden_one;
+}
+.social-icons ul li {
+	padding: 0 10px;
+	&:last-child {
+		padding-right: 0;
+	}
+	a {
+		font-size: 18px;
+		color: $color_gray_light_one;
+		padding: 0;
+		&:hover {
+			color: $color_brown_light_one;
+			background: none;
+		}
+		&:focus {
+			color: $color_brown_light_one;
+			background: none;
+		}
+	}
+}
+.navbar-inverse .navbar-nav > .open > a {
+	@extend %header_3;
+}
